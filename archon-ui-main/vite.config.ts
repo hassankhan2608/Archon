@@ -280,6 +280,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       host: '0.0.0.0', // Listen on all network interfaces with explicit IP
       port: 5173, // Match the port expected in Docker
       strictPort: true, // Exit if port is in use
+      allowedHosts: [externalHost],
       proxy: {
         '/api': {
           target: `http://${host}:${port}`,
